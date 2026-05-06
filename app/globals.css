@@ -1,0 +1,237 @@
+/* ── Google Fonts (must precede all other rules) ──────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap");
+
+@import "tailwindcss";
+
+/* ── Design tokens ────────────────────────────────────────────────────────── */
+:root {
+  --bg: #050a0a;
+  --bg-surface: #0d1717;
+  --bg-card: #111f1f;
+  --border: #1a2e2e;
+  --border-soft: #243838;
+  --text: #e8f4f4;
+  --text-muted: #8ab4b4;
+  --text-dim: #4a7a7a;
+  --accent: #2dd4d4;
+  --accent-muted: rgba(45, 212, 212, 0.08);
+  --accent-border: rgba(45, 212, 212, 0.18);
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+}
+
+html.light {
+  --bg: #f5fafa;
+  --bg-surface: #ffffff;
+  --bg-card: #eef8f8;
+  --border: #cde8e8;
+  --border-soft: #bddcdc;
+  --text: #0a1a1a;
+  --text-muted: #2a6060;
+  --text-dim: #5a9a9a;
+  --accent: #0891b2;
+  --accent-muted: rgba(8, 145, 178, 0.08);
+  --accent-border: rgba(8, 145, 178, 0.18);
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ── Selection ────────────────────────────────────────────────────────────── */
+::selection {
+  background: var(--accent);
+  color: #050a0a;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-soft);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ── Typography helpers ───────────────────────────────────────────────────── */
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ── Section wrapper ──────────────────────────────────────────────────────── */
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+
+/* ── Section label ────────────────────────────────────────────────────────── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ── Accent line ──────────────────────────────────────────────────────────── */
+.accent-line {
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+/* ── Card ─────────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
+}
+
+/* ── Pill / tag ───────────────────────────────────────────────────────────── */
+.pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  color: var(--text-muted);
+  background: transparent;
+  white-space: nowrap;
+}
+
+/* ── Button ───────────────────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: var(--accent);
+  color: #050a0a;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-soft);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* ── Availability badge ───────────────────────────────────────────────────── */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--accent-muted);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* ── Timeline ─────────────────────────────────────────────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 19px;
+  top: 28px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.timeline-dot-inactive {
+  width: 12px;
+  height: 12px;
+  background: var(--border-soft);
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
