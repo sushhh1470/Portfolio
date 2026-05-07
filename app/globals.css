@@ -1,110 +1,163 @@
 /* ── Google Fonts (must precede all other rules) ──────────────────────────── */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Space+Mono:wght@400;700&display=swap");
 
 @import "tailwindcss";
 
-/* ── Design tokens ────────────────────────────────────────────────────────── */
+/* ── Design tokens — Warm Editorial Dark ─────────────────────────────────── */
+/*
+  Aesthetic: "Warm Editorial"
+  Inspired by high-fashion editorial design — deep warm darks, ivory text,
+  teal as a cool counterpoint, rose/terracotta from the sunset photo.
+*/
 :root {
-  --bg: #050a0a;
-  --bg-surface: #0d1717;
-  --bg-card: #111f1f;
-  --border: #1a2e2e;
-  --border-soft: #243838;
-  --text: #e8f4f4;
-  --text-muted: #8ab4b4;
-  --text-dim: #4a7a7a;
-  --accent: #2dd4d4;
-  --accent-muted: rgba(45, 212, 212, 0.08);
-  --accent-border: rgba(45, 212, 212, 0.18);
-  --font-heading: "Playfair Display", Georgia, serif;
-  --font-body: "Outfit", system-ui, sans-serif;
-  --font-mono: "Space Mono", "Courier New", monospace;
+  /* Backgrounds */
+  --bg:          #080604;
+  --bg-surface:  #0d0a07;
+  --bg-card:     #141009;
+  --bg-elevated: #1c1610;
+
+  /* Borders */
+  --border:      #221a0f;
+  --border-soft: #2e2015;
+  --border-warm: rgba(240, 152, 100, 0.22);
+
+  /* Text — warm ivory */
+  --text:        #f0e9e1;
+  --text-muted:  #9e7e68;
+  --text-dim:    #54382a;
+
+  /* Primary accent — teal */
+  --accent:        #2dd4d4;
+  --accent-muted:  rgba(45, 212, 212, 0.07);
+  --accent-border: rgba(45, 212, 212, 0.16);
+
+  /* Warm accent — terracotta, from the sunset */
+  --warm:        #f09870;
+  --warm-muted:  rgba(240, 152, 112, 0.08);
+  --warm-border: rgba(240, 152, 112, 0.2);
+
+  /* Rose accent — from the sunset sky */
+  --rose:        #f0a8b4;
+  --rose-muted:  rgba(240, 168, 180, 0.07);
+  --rose-border: rgba(240, 168, 180, 0.2);
+
+  /* Typography */
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body:    "DM Sans", system-ui, sans-serif;
+  --font-mono:    "Space Mono", "Courier New", monospace;
+
+  /* Spacing scale */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* Radius */
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
 }
 
 html.light {
-  --bg: #f5fafa;
-  --bg-surface: #ffffff;
-  --bg-card: #eef8f8;
-  --border: #cde8e8;
-  --border-soft: #bddcdc;
-  --text: #0a1a1a;
-  --text-muted: #2a6060;
-  --text-dim: #5a9a9a;
-  --accent: #0891b2;
-  --accent-muted: rgba(8, 145, 178, 0.08);
-  --accent-border: rgba(8, 145, 178, 0.18);
+  --bg:          #faf5ef;
+  --bg-surface:  #ffffff;
+  --bg-card:     #f3ece4;
+  --bg-elevated: #ebe1d6;
+  --border:      #ddd0c4;
+  --border-soft: #cfc0b0;
+  --border-warm: rgba(180, 90, 40, 0.2);
+  --text:        #1a0e06;
+  --text-muted:  #6a4030;
+  --text-dim:    #a07858;
+  --accent:        #0891b2;
+  --accent-muted:  rgba(8, 145, 178, 0.08);
+  --accent-border: rgba(8, 145, 178, 0.2);
+  --warm:        #c8602a;
+  --warm-muted:  rgba(200, 96, 42, 0.07);
+  --warm-border: rgba(200, 96, 42, 0.2);
+  --rose:        #b85070;
+  --rose-muted:  rgba(184, 80, 112, 0.07);
+  --rose-border: rgba(184, 80, 112, 0.2);
 }
 
-/* ── Base ─────────────────────────────────────────────────────────────────── */
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+/* ── Base reset ───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; padding: 0; margin: 0; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  transition: background 0.3s ease, color 0.3s ease;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.35s ease, color 0.35s ease;
 }
 
-/* ── Selection ────────────────────────────────────────────────────────────── */
-::selection {
-  background: var(--accent);
-  color: #050a0a;
-}
+::selection { background: var(--accent); color: #050a0a; }
 
 /* ── Scrollbar ────────────────────────────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb {
   background: var(--border-soft);
   border-radius: 3px;
+  transition: background 0.2s;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
-}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
 /* ── Typography helpers ───────────────────────────────────────────────────── */
-.font-heading {
-  font-family: var(--font-heading);
-}
-.font-mono {
-  font-family: var(--font-mono);
-}
+.font-heading { font-family: var(--font-heading); }
+.font-mono    { font-family: var(--font-mono); }
 
-/* ── Section wrapper ──────────────────────────────────────────────────────── */
+/* ── Layout ───────────────────────────────────────────────────────────────── */
 .section-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 96px 24px;
+  padding: clamp(64px, 10vw, 104px) clamp(20px, 4vw, 40px);
 }
 
 /* ── Section label ────────────────────────────────────────────────────────── */
 .section-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--accent);
+  display: inline-block;
+}
+
+.section-label-warm {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--warm);
+  display: inline-block;
 }
 
 /* ── Accent line ──────────────────────────────────────────────────────────── */
 .accent-line {
-  width: 48px;
-  height: 3px;
-  background: var(--accent);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+.accent-line-warm {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--warm), transparent);
   border-radius: 2px;
   margin-top: 8px;
 }
@@ -113,117 +166,124 @@ body {
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-.card:hover {
-  border-color: var(--accent-border);
-  transform: translateY(-2px);
+  border-radius: var(--radius-md);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.22s ease;
 }
 
-/* ── Pill / tag ───────────────────────────────────────────────────────────── */
+.card:hover {
+  border-color: var(--border-warm);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(240, 152, 100, 0.07);
+  transform: translateY(-3px);
+}
+
+/* ── Tag / pill ───────────────────────────────────────────────────────────── */
 .pill {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.05em;
-  padding: 3px 10px;
+  font-size: 0.67rem;
+  letter-spacing: 0.06em;
+  padding: 4px 11px;
   border-radius: 999px;
   border: 1px solid var(--border-soft);
   color: var(--text-muted);
   background: transparent;
   white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s;
 }
 
-/* ── Button ───────────────────────────────────────────────────────────────── */
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 22px;
+  padding: 11px 24px;
   background: var(--accent);
-  color: #050a0a;
+  color: #040a0a;
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.875rem;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   border: none;
   cursor: pointer;
-  transition: opacity 0.2s ease, transform 0.15s ease;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.btn-primary:hover {
-  opacity: 0.88;
-  transform: translateY(-1px);
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.2s;
 }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(45,212,212,0.32); }
+.btn-primary:hover::after { opacity: 1; }
+.btn-primary:active { transform: translateY(0); }
 
 .btn-outline {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 22px;
+  padding: 11px 24px;
   background: transparent;
   color: var(--text);
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.875rem;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border-soft);
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
   text-decoration: none;
+  transition: border-color 0.22s ease, color 0.22s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 .btn-outline:hover {
-  border-color: var(--accent);
+  border-color: var(--accent-border);
   color: var(--accent);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(45,212,212,0.1);
 }
 
 /* ── Availability badge ───────────────────────────────────────────────────── */
 .availability-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  background: var(--accent-muted);
-  border: 1px solid var(--accent-border);
+  gap: 9px;
+  padding: 7px 16px;
+  background: linear-gradient(135deg, var(--warm-muted), var(--rose-muted));
+  border: 1px solid var(--warm-border);
   border-radius: 999px;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  color: var(--accent);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--warm);
 }
 
 .pulse-dot {
   width: 7px;
   height: 7px;
-  background: var(--accent);
+  background: var(--warm);
   border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+  animation: pulse-warm 2.2s ease-in-out infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.85); }
+@keyframes pulse-warm {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.8); }
 }
 
 /* ── Timeline ─────────────────────────────────────────────────────────────── */
-.timeline-line {
-  position: absolute;
-  left: 19px;
-  top: 28px;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
-}
-
 .timeline-dot {
   width: 12px;
   height: 12px;
   background: var(--accent);
   border-radius: 50%;
   border: 2px solid var(--bg);
+  box-shadow: 0 0 0 3px var(--accent-border);
   flex-shrink: 0;
-  margin-top: 5px;
 }
 
 .timeline-dot-inactive {
@@ -233,5 +293,37 @@ body {
   border-radius: 50%;
   border: 2px solid var(--bg);
   flex-shrink: 0;
-  margin-top: 5px;
+}
+
+/* ── Hero gradient mesh background ───────────────────────────────────────── */
+/* Warm terracotta at top-right (near photo), teal at bottom-left, rose centre */
+.hero-mesh {
+  background:
+    radial-gradient(ellipse 65% 55% at 88% 22%, rgba(240, 152, 112, 0.09) 0%, transparent 100%),
+    radial-gradient(ellipse 55% 65% at 12% 78%, rgba(45,  212, 212, 0.06) 0%, transparent 100%),
+    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(240, 168, 180, 0.03) 0%, transparent 100%),
+    var(--bg);
+}
+
+/* ── Noise texture overlay (adds organic depth) ───────────────────────────── */
+/* Applied via ::before on sections that benefit from texture */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 0;
+}
+.noise-overlay > * { position: relative; z-index: 1; }
+
+/* ── Divider ──────────────────────────────────────────────────────────────── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-soft), transparent);
+  margin: 0;
 }

@@ -64,13 +64,13 @@ export interface EducationItem {
 
 export const personal: PersonalInfo = {
   name: "Sushmita Koti",
-  title: "Product Manager",
-  subtitle: "Healthcare Informatics & Clinical Operations",
+  title: "Project Manager",
+  subtitle: "",
   tagline: "User-first thinking. Clinical rigor. Data-driven execution.",
-  bio: "I'm a product-focused professional with a Master's in Healthcare Informatics and 4+ years bridging clinical operations, data analysis, and product strategy. I've led end-to-end delivery of clinical trials for a ~$100M drug development program and built product interventions — from meal personalization systems to safety-first app features — grounded in user research and measurable outcomes.",
+  bio: "I'm a product-focused professional with a Master's in Healthcare Informatics and 4+ years bridging clinical operations, data analysis, and product strategy. I've led end-to-end delivery of clinical trials for a ~$100M drug development program and built product interventions spanning meal personalization systems to safety-first app features, grounded in user research and measurable outcomes.",
   location: "Minnesota",
   openToRemote: true,
-  availability: "Open to PM Roles",
+  availability: "Open to Product Manager Roles",
   email: "Sushmitakoti2051@gmail.com",
   phone: "(203) 361-0927",
   resumeUrl: "/Sushmita_Koti_Resume.pdf", // Place Sushmita_Koti_Resume.pdf in /public/ and set to "/Sushmita_Koti_Resume.pdf"
@@ -106,7 +106,6 @@ export const skills: SkillCategory[] = [
       { name: "MySQL", devicon: "devicon-mysql-plain" },
       { name: "BigQuery", simpleSlug: "googlebigquery" },
       { name: "Looker Studio", simpleSlug: "looker" },
-      { name: "Optimizely", simpleSlug: "optimizely" },
     ],
   },
   {
