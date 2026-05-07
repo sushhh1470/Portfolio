@@ -81,7 +81,7 @@ export const personal: PersonalInfo = {
 
 export const links: Links = {
   github: "",
-  linkedin: "", // Fill in: https://linkedin.com/in/sushmitakoti
+  linkedin: "https://www.linkedin.com/in/sushmitakoti/",
   email: "mailto:Sushmitakoti2051@gmail.com",
 };
 
