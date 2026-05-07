@@ -47,6 +47,7 @@ export type SvgType = "meal" | "safety" | "plant" | "tv";
 export interface ProjectItem {
   title: string;
   description: string;
+  bullets: string[];
   outcome: string;
   tags: string[];
   github: string;
@@ -179,8 +180,15 @@ export const experience: ExperienceItem[] = [
 export const projects: ProjectItem[] = [
   {
     title: "Purple Carrot — Product Strategy & Prototype",
-    description:
-      "Purple Carrot had the right instincts but was bleeding users at every funnel stage. I ran a full product teardown, mapped 7 critical friction points across acquisition, engagement, and retention, and designed targeted interventions: persona-based meal personalization, a visual-first recipe UX, and a gamified feedback-to-rewards loop. Key tradeoff: the 'Plant Seeds' loyalty system added system complexity but addressed the core gap — users felt unrewarded for staying, and no amount of recipe polish would fix that.",
+    description: "Full product teardown across acquisition, engagement, and retention funnels.",
+    bullets: [
+      "Mapped 7 critical friction points across the full user funnel",
+      "Identified root cause: users felt unrewarded for staying — recipe polish alone wouldn't fix it",
+      "Designed persona-based meal personalization to reduce early drop-off at onboarding",
+      "Built a visual-first recipe UX and gamified feedback-to-rewards loop for engagement",
+      "Created 'Plant Seeds' loyalty system to close the long-term retention gap",
+      "Key tradeoff: loyalty system added complexity but addressed the root cause, not symptoms",
+    ],
     outcome: "7 friction points mapped → 3 retention systems designed and prototyped end-to-end",
     tags: ["Product Strategy", "UX Research", "Funnel Analysis", "Prototyping", "Retention"],
     github: "",
@@ -190,8 +198,15 @@ export const projects: ProjectItem[] = [
   },
   {
     title: "Dating App Safety Layer — Prototype",
-    description:
-      "Most safety features are afterthoughts bolted on after growth stalls. I reframed safety as the core retention driver — arguing that psychological trust, not match volume, was the true growth constraint. Designed a multi-layer system targeting the most vulnerable moments in the user journey: Getting to Know You Mode, First Meet Checklist, and Discomfort Detection. Reframing the north star from 'matches made' to 'safe real-world meetings completed' changed every design decision downstream.",
+    description: "Reframed safety as the core retention driver, not a feature afterthought.",
+    bullets: [
+      "Identified that most platforms optimize for match volume — but trust is the real growth constraint",
+      "Mapped the most vulnerable moments in the user journey where safety concerns cause drop-off",
+      "Designed Getting to Know You Mode to build trust before users meet in person",
+      "Built First Meet Checklist and Discomfort Detection System for real-world safety",
+      "Reframed success metric from 'matches made' to 'safe real-world meetings completed'",
+      "Key insight: reframing the north star changed every design decision downstream",
+    ],
     outcome: "Trust reframed as the core retention metric — not swipe volume or match rate",
     tags: ["Product Design", "Safety Systems", "User Psychology", "Retention", "Prototype"],
     github: "",
@@ -201,8 +216,14 @@ export const projects: ProjectItem[] = [
   },
   {
     title: "Pluto TV Replica — Engagement & Retention Design",
-    description:
-      "Streaming platforms suffer from decision fatigue and shallow return visits. I identified three behavioral levers — curation, social influence, and mood-state alignment — and designed features around each: a heart-to-recommendations engine to cut choice paralysis, a social share-to-playlist feature driving peer-influenced return visits, and mood-based channels aligning content to viewer intent. Each feature was designed to close a specific drop-off moment in the session loop rather than add passive noise.",
+    description: "Designed three behavioral features targeting specific session drop-off moments.",
+    bullets: [
+      "Identified three root causes: choice paralysis, lack of peer influence, and mood-content mismatch",
+      "Built heart-to-recommendations engine — hearting content triggers 1–2 curated suggestions",
+      "Designed social share-to-playlist feature: shared content lands in friends' playlists, driving return visits",
+      "Created mood-based channels (Relax, Comfort & Cozy, Feel Good TV) to align content with viewer intent",
+      "Each feature targets a distinct drop-off moment rather than adding passive noise to the interface",
+    ],
     outcome: "3 behavioral loops targeting distinct drop-off moments in the session cycle",
     tags: ["Engagement Design", "Behavioral Design", "Social Features", "Retention", "Prototype"],
     github: "",
@@ -212,8 +233,15 @@ export const projects: ProjectItem[] = [
   },
   {
     title: "Thistle — Tradeoff Analysis & Product Reasoning",
-    description:
-      "Pattern recognition exercise: 'lack of satiety' dominated negative reviews. I mapped it to core user dissatisfaction drivers, proposed a 'Filling Score' mechanism to guide meal selection, then stress-tested it against real business constraints — uncovering risks of revenue cannibalization (users skipping premium meals) and subjectivity bias (satiety is deeply personal). The analysis shifted the framing from 'add a feature' to 'what system-level constraint makes this genuinely hard to solve?'",
+    description: "Deep tradeoff analysis showing how feature thinking can mask system-level constraints.",
+    bullets: [
+      "Analyzed negative reviews and identified 'lack of satiety' as the dominant dissatisfaction driver",
+      "Mapped the pattern to core behavior: users chose meals that looked good but didn't fill them",
+      "Proposed a 'Filling Score' mechanism to guide meal selection at the point of decision",
+      "Stress-tested the solution — uncovered revenue cannibalization risk (users skipping premium meals)",
+      "Identified subjectivity bias as a second constraint: satiety is personal and hard to standardize",
+      "Conclusion: shifted framing from 'add a feature' to 'what system constraint makes this hard to solve?'",
+    ],
     outcome: "Rejected the easy feature fix — surfaced a deeper pricing and perception constraint",
     tags: ["Product Reasoning", "Tradeoff Analysis", "User Research", "Metric Design"],
     github: "",

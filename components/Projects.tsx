@@ -252,16 +252,32 @@ export default function Projects() {
                         {project.title}
                       </h3>
 
-                      <p
-                        style={{
-                          fontSize: "0.875rem",
-                          color: "var(--text-muted)",
-                          lineHeight: 1.72,
-                          marginBottom: project.outcome ? 14 : 20,
-                        }}
-                      >
-                        {project.description}
-                      </p>
+                      <ul style={{
+                        listStyle: "none",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 7,
+                        marginBottom: project.outcome ? 14 : 20,
+                      }}>
+                        {project.bullets.map((bullet, i) => (
+                          <li key={i} style={{
+                            display: "flex",
+                            gap: 10,
+                            fontSize: "0.86rem",
+                            color: "var(--text-muted)",
+                            lineHeight: 1.6,
+                          }}>
+                            <span style={{
+                              color: project.accent,
+                              flexShrink: 0,
+                              marginTop: 3,
+                              fontSize: "0.5rem",
+                              fontWeight: 700,
+                            }}>▸</span>
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
 
                       {project.outcome && (
                         <div style={{
