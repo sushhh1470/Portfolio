@@ -181,7 +181,7 @@ export default function Hero() {
                   fill
                   priority
                   sizes="(max-width: 768px) 240px, 268px"
-                  style={{ objectFit: "cover", objectPosition: "center 5%" }}
+                  style={{ objectFit: "cover", objectPosition: "center 15%" }}
                 />
                 {/* Subtle warm gradient at bottom edge — blends photo into bg */}
                 <div style={{
