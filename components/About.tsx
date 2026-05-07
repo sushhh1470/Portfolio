@@ -66,13 +66,31 @@ export default function About() {
             {/* Right — bio + location + education */}
             <motion.div variants={fadeUp} style={{ display: "flex", flexDirection: "column", gap: 32 }}>
               <div>
-                <p style={{
-                  fontSize: "clamp(0.95rem, 1.8vw, 1.05rem)",
-                  lineHeight: 1.82,
-                  color: "var(--text-muted)",
-                }}>
-                  {personal.bio}
-                </p>
+                {personal.bio.split("\n\n").map((para, i) => (
+                  <p key={i} style={{
+                    fontSize: "clamp(0.95rem, 1.8vw, 1.05rem)",
+                    lineHeight: 1.82,
+                    color: "var(--text-muted)",
+                    marginBottom: i < personal.bio.split("\n\n").length - 1 ? 16 : 0,
+                  }}>
+                    {para}
+                  </p>
+                ))}
+
+                {personal.philosophy && (
+                  <blockquote style={{
+                    marginTop: 24,
+                    paddingLeft: 16,
+                    borderLeft: "2px solid var(--accent-border)",
+                    fontFamily: "var(--font-heading)",
+                    fontSize: "1.05rem",
+                    fontStyle: "italic",
+                    color: "var(--text-muted)",
+                    lineHeight: 1.65,
+                  }}>
+                    &ldquo;{personal.philosophy}&rdquo;
+                  </blockquote>
+                )}
 
                 {/* Location + relocation tag */}
                 <div style={{

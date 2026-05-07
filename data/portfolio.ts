@@ -6,6 +6,7 @@ export interface PersonalInfo {
   subtitle: string;
   tagline: string;
   bio: string;
+  philosophy: string;
   location: string;
   openToRemote: boolean;
   availability: string;
@@ -46,6 +47,7 @@ export type SvgType = "meal" | "safety" | "plant" | "tv";
 export interface ProjectItem {
   title: string;
   description: string;
+  outcome: string;
   tags: string[];
   github: string;
   demo: string;
@@ -67,7 +69,8 @@ export const personal: PersonalInfo = {
   title: "Project Manager",
   subtitle: "",
   tagline: "User-first thinking. Clinical rigor. Data-driven execution.",
-  bio: "I'm a product-focused professional with a Master's in Healthcare Informatics and 4+ years bridging clinical operations, data analysis, and product strategy. I've led end-to-end delivery of clinical trials for a ~$100M drug development program and built product interventions spanning meal personalization systems to safety-first app features, grounded in user research and measurable outcomes.",
+  bio: "I spent six years diagnosing patients before realizing the real bottleneck wasn't clinical skill — it was the system around the patient. That realization drove me to pursue a Master's in Healthcare Informatics and pivot into product, where I could fix systems rather than just work within them.\n\nToday I lead end-to-end clinical trial delivery at AXIS Clinicals across a ~$100M drug development program, while building product prototypes on the side to stay sharp on user research, funnel analysis, and tradeoff thinking.",
+  philosophy: "The best products are built by people who understand what's truly at stake for the user. Six years of patient care taught me that better than any framework.",
   location: "Minnesota",
   openToRemote: true,
   availability: "Open to Product Manager Roles",
@@ -177,7 +180,8 @@ export const projects: ProjectItem[] = [
   {
     title: "Purple Carrot — Product Strategy & Prototype",
     description:
-      "Led a full product teardown identifying 7 critical friction points across acquisition, engagement, and retention funnels. Designed scalable interventions: persona-based meal personalization, visual-first recipe UX, a gamified feedback-to-rewards loop, and a 'Plant Seeds' loyalty system. Prototyped an end-to-end interactive experience to validate usability.",
+      "Purple Carrot had the right instincts but was bleeding users at every funnel stage. I ran a full product teardown, mapped 7 critical friction points across acquisition, engagement, and retention, and designed targeted interventions: persona-based meal personalization, a visual-first recipe UX, and a gamified feedback-to-rewards loop. Key tradeoff: the 'Plant Seeds' loyalty system added system complexity but addressed the core gap — users felt unrewarded for staying, and no amount of recipe polish would fix that.",
+    outcome: "7 friction points mapped → 3 retention systems designed and prototyped end-to-end",
     tags: ["Product Strategy", "UX Research", "Funnel Analysis", "Prototyping", "Retention"],
     github: "",
     demo: "https://freshbite.replit.app/",
@@ -187,7 +191,8 @@ export const projects: ProjectItem[] = [
   {
     title: "Dating App Safety Layer — Prototype",
     description:
-      "Reframed safety as the core retention driver — positioning trust, not match volume, as the key constraint. Designed a multi-layer safety system addressing critical vulnerability moments: Getting to Know You Mode, First Meet Checklist, and Discomfort Detection System. Validated that psychological safety directly drives retention and real-world interaction conversion.",
+      "Most safety features are afterthoughts bolted on after growth stalls. I reframed safety as the core retention driver — arguing that psychological trust, not match volume, was the true growth constraint. Designed a multi-layer system targeting the most vulnerable moments in the user journey: Getting to Know You Mode, First Meet Checklist, and Discomfort Detection. Reframing the north star from 'matches made' to 'safe real-world meetings completed' changed every design decision downstream.",
+    outcome: "Trust reframed as the core retention metric — not swipe volume or match rate",
     tags: ["Product Design", "Safety Systems", "User Psychology", "Retention", "Prototype"],
     github: "",
     demo: "https://safe-connect--sushmicherry.replit.app/",
@@ -197,7 +202,8 @@ export const projects: ProjectItem[] = [
   {
     title: "Pluto TV Replica — Engagement & Retention Design",
     description:
-      "Designed and built a streaming platform replica with three engagement features: a 'My Playlist' system where hearting content triggers 1–2 curated recommendations to reduce decision fatigue; a social share-to-playlist feature that adds shared content to friends' playlists, driving peer-influenced return visits; and mood-based channels ('Relax', 'Comfort & Cozy', 'Feel Good TV') to align content with viewer intent and boost session length.",
+      "Streaming platforms suffer from decision fatigue and shallow return visits. I identified three behavioral levers — curation, social influence, and mood-state alignment — and designed features around each: a heart-to-recommendations engine to cut choice paralysis, a social share-to-playlist feature driving peer-influenced return visits, and mood-based channels aligning content to viewer intent. Each feature was designed to close a specific drop-off moment in the session loop rather than add passive noise.",
+    outcome: "3 behavioral loops targeting distinct drop-off moments in the session cycle",
     tags: ["Engagement Design", "Behavioral Design", "Social Features", "Retention", "Prototype"],
     github: "",
     demo: "https://pluto-stream.replit.app/",
@@ -205,9 +211,10 @@ export const projects: ProjectItem[] = [
     svgType: "tv",
   },
   {
-    title: "Thistle — Product Problem Solving & Tradeoff Analysis",
+    title: "Thistle — Tradeoff Analysis & Product Reasoning",
     description:
-      "Identified 'lack of satiety' as the dominant driver of negative reviews and mapped it to core user dissatisfaction patterns. Proposed a 'Filling Score' mechanism to guide meal selection, then stress-tested it against business constraints — uncovering risks of revenue cannibalization and subjectivity bias, shifting the analysis from feature thinking to system-level tradeoff evaluation.",
+      "Pattern recognition exercise: 'lack of satiety' dominated negative reviews. I mapped it to core user dissatisfaction drivers, proposed a 'Filling Score' mechanism to guide meal selection, then stress-tested it against real business constraints — uncovering risks of revenue cannibalization (users skipping premium meals) and subjectivity bias (satiety is deeply personal). The analysis shifted the framing from 'add a feature' to 'what system-level constraint makes this genuinely hard to solve?'",
+    outcome: "Rejected the easy feature fix — surfaced a deeper pricing and perception constraint",
     tags: ["Product Reasoning", "Tradeoff Analysis", "User Research", "Metric Design"],
     github: "",
     demo: "",

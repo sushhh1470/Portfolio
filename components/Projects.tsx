@@ -257,11 +257,28 @@ export default function Projects() {
                           fontSize: "0.875rem",
                           color: "var(--text-muted)",
                           lineHeight: 1.72,
-                          marginBottom: 20,
+                          marginBottom: project.outcome ? 14 : 20,
                         }}
                       >
                         {project.description}
                       </p>
+
+                      {project.outcome && (
+                        <div style={{
+                          marginBottom: 20,
+                          padding: "9px 14px",
+                          background: project.accent + "0e",
+                          border: `1px solid ${project.accent}30`,
+                          borderRadius: 8,
+                          fontFamily: "var(--font-mono)",
+                          fontSize: "0.7rem",
+                          letterSpacing: "0.02em",
+                          color: project.accent,
+                          lineHeight: 1.5,
+                        }}>
+                          ▸ {project.outcome}
+                        </div>
+                      )}
 
                       {/* Tags */}
                       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 24 }}>

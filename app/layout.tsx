@@ -2,13 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { personal } from "@/data/portfolio";
 
+const metaDescription =
+  "Product Manager with a Healthcare Informatics Master's and 6+ years of clinical experience. Leading clinical trial delivery at AXIS Clinicals. Open to PM roles in healthtech, digital health, and consumer products.";
+
 export const metadata: Metadata = {
   title: `${personal.name} — ${personal.title}`,
-  description: personal.tagline,
+  description: metaDescription,
+  keywords: ["Product Manager", "Healthcare Informatics", "Clinical Trials", "Healthtech", "UX Research", "Sushmita Koti"],
   openGraph: {
-    title: `${personal.name} — ${personal.title}`,
-    description: personal.tagline,
+    title: `${personal.name} — Product Manager`,
+    description: metaDescription,
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: `${personal.name} — Product Manager`,
+    description: metaDescription,
   },
 };
 
