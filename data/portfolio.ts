@@ -140,7 +140,7 @@ export const experience: ExperienceItem[] = [
   {
     company: "AXIS Clinicals",
     role: "Associate Project Manager",
-    period: "Mar 2024 – Present",
+    period: "Mar 2025 – Present",
     location: "Dilworth, Minnesota",
     current: true,
     highlights: [

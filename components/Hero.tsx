@@ -169,7 +169,7 @@ export default function Hero() {
               {/* Photo container — portrait rectangle */}
               <div style={{
                 width: "clamp(265px, 27vw, 320px)",
-                height: "clamp(350px, 36vw, 420px)",
+                height: "clamp(340px, 36vw, 400px)",
                 borderRadius: 20,
                 overflow: "hidden",
                 position: "relative",
@@ -181,7 +181,7 @@ export default function Hero() {
                   fill
                   priority
                   sizes="(max-width: 768px) 240px, 268px"
-                  style={{ objectFit: "cover", objectPosition: "center 12%" }}
+                  style={{ objectFit: "cover", objectPosition: "center 5%" }}
                 />
                 {/* Subtle warm gradient at bottom edge — blends photo into bg */}
                 <div style={{
